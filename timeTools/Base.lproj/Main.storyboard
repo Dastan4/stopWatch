@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bUv-6P-c8Y">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="WnH-Ro-5jn">
+            <objects>
+                <tabBarController id="bUv-6P-c8Y" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="s6v-VG-DdL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="S4j-BU-Cmo" kind="relationship" relationship="viewControllers" id="p4G-jN-eYM"/>
+                        <segue destination="qrV-eI-JTC" kind="relationship" relationship="viewControllers" id="nPI-8s-J4L"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sDG-Ag-L0Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="584" y="-678"/>
+        </scene>
+        <!--stopwatch-->
+        <scene sceneID="3K5-we-laQ">
+            <objects>
+                <navigationController id="S4j-BU-Cmo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="stopwatch" image="stopwatch" catalog="system" id="akf-YQ-lz8"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xdr-5N-zXp">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="yzD-K1-Tee" kind="relationship" relationship="rootViewController" id="bvn-pj-fOh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4gu-Kk-OBh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="72" y="73"/>
+        </scene>
+        <!--Stopwatch View Controller-->
+        <scene sceneID="eMN-OY-IU3">
+            <objects>
+                <viewController id="yzD-K1-Tee" customClass="StopwatchViewController" customModule="timeTools" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Pl-cB-nkx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Djo-3P-dO6">
+                                <rect key="frame" x="157" y="585" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" backgroundImage="pause.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="pauseButtonWasPushed:" destination="yzD-K1-Tee" eventType="touchUpInside" id="zMd-e5-ZuP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QKN-VV-t7T">
+                                <rect key="frame" x="49" y="585" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" backgroundImage="stop.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="stopButtonWasPushed:" destination="yzD-K1-Tee" eventType="touchUpInside" id="m5S-gy-YhL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88X-rO-55b">
+                                <rect key="frame" x="265" y="585" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" backgroundImage="play.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="startButtonWasPushed:" destination="yzD-K1-Tee" eventType="touchUpInside" id="w93-C7-KKV"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00 : 00 : 00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l5R-1u-IYV">
+                                <rect key="frame" x="53" y="255" width="309" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92491619449999996" green="0.82171552000000003" blue="0.65786763179999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DVG-d5-Vyc"/>
+                        <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kSg-jv-ETR"/>
+                    <connections>
+                        <outlet property="StopwatchTimerLable" destination="l5R-1u-IYV" id="QFe-NE-j6F"/>
+                        <outlet property="pauseButton" destination="Djo-3P-dO6" id="i3l-mt-tFy"/>
+                        <outlet property="startButton" destination="88X-rO-55b" id="32z-jR-LhL"/>
+                        <outlet property="stopButton" destination="QKN-VV-t7T" id="Ibg-0j-8lO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2sQ-pV-cTc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="69.565217391304358" y="799.55357142857144"/>
+        </scene>
+        <!--timer-->
+        <scene sceneID="xDc-xd-ZYt">
+            <objects>
+                <navigationController id="qrV-eI-JTC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="timer" image="timer" catalog="system" id="eFf-pn-1Rj"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j7A-yh-Bep">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ubp-fU-nxy" kind="relationship" relationship="rootViewController" id="UPM-w6-nxd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lS2-gk-o4e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1129" y="73"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ggo-aW-ojb">
+            <objects>
+                <viewController id="ubp-fU-nxy" customClass="ViewController" customModule="timeTools" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gBH-81-UPc" customClass="View" customModule="timeTools">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="30" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="h6Y-Qa-ZxO">
+                                <rect key="frame" x="83" y="434" width="248" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <color key="maximumTrackTintColor" red="0.92491619449999996" green="0.82171552000000003" blue="0.65786763179999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="thumbTintColor" systemColor="labelColor"/>
+                                <connections>
+                                    <action selector="timerSlider:" destination="ubp-fU-nxy" eventType="valueChanged" id="XLc-pP-Wzn"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9H5-11-fwu">
+                                <rect key="frame" x="157" y="585" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" backgroundImage="pause.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="timerPauseButtonWasPushed:" destination="ubp-fU-nxy" eventType="touchUpInside" id="wIa-nM-ZxW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZWM-1X-PzE">
+                                <rect key="frame" x="49" y="585" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" backgroundImage="stop.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="timerStopButtonWasPushed:" destination="ubp-fU-nxy" eventType="touchUpInside" id="lU8-hH-AJH"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4g-Tf-9tE">
+                                <rect key="frame" x="265" y="585" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" backgroundImage="play.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="timerStartButtonWasPushed:" destination="ubp-fU-nxy" eventType="touchUpInside" id="t58-wI-HpR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00 : 00 : 00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Edj-uv-Nkn">
+                                <rect key="frame" x="53" y="253" width="309" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92491619449999996" green="0.82171552000000003" blue="0.65786763179999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="a3P-tI-QcJ"/>
+                        <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="A1x-wj-dZZ"/>
+                    <connections>
+                        <outlet property="pauseButton" destination="9H5-11-fwu" id="SJG-cf-Xk6"/>
+                        <outlet property="startButton" destination="A4g-Tf-9tE" id="yXc-xT-gq9"/>
+                        <outlet property="stopButton" destination="ZWM-1X-PzE" id="ael-yi-Z7C"/>
+                        <outlet property="timerLabel" destination="Edj-uv-Nkn" id="9gL-Xh-w0K"/>
+                        <outlet property="timerSlider" destination="h6Y-Qa-ZxO" id="DiB-KQ-ITE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q2b-dB-APC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1128.985507246377" y="799.55357142857144"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pause.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="play.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="stop.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="stopwatch" catalog="system" width="121" height="128"/>
+        <image name="timer" catalog="system" width="128" height="121"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
